@@ -10,7 +10,7 @@ resource "azurerm_route_table" "routeTable" {
     disable_bgp_route_propagation = each.value.rt_disable_bgp_route_propagation
     tags                = each.value.rt_tags
     dynamic "route"{
-        for_each = each.value.route 
+        for_each = each.value.rt_route 
         content {
             name = route.key
             address_prefix = route.value.route_address_prefix
