@@ -3,3 +3,9 @@ variable "vnet_maps" {
   default     = []
   description = ""
 }
+
+variable "nsg_maps" {
+  type        = list(any)
+  default     = []
+  description = ""
+}
