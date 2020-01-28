@@ -12,7 +12,7 @@ resource "azurerm_route_table" "routeTable" {
     dynamic "route"{
         for_each = each.value.rt_route 
         content {
-            name = route.key
+            name = route.value.route
             address_prefix = route.value.route_address_prefix
             next_hop_type = route.value.route_next_hop_type
             next_hop_in_ip_address = route.value.route_next_hop_in_ip_address
