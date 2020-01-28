@@ -14,7 +14,7 @@ resource "azurerm_virtual_network" "virtualNetwork" {
     dynamic "subnet"{
         for_each            = each.value.subnet
         content{
-            name            = subnet.key
+            name            = subnet.value.sub_name
             address_prefix  = subnet.value.sub_addr_space
             security_group  = subnet.value.sub_nsg_group
         }
