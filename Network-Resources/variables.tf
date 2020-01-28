@@ -9,3 +9,9 @@ variable "nsg_maps" {
   default     = []
   description = ""
 }
+
+variable "rt_maps" {
+  type        = list(any)
+  default     = []
+  description = ""
+}

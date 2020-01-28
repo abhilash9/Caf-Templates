@@ -28,3 +28,17 @@ output "nsg_ids" {
   description = ""
 }
 
+#---------------------------------------------------------------------------------------------
+# Output from the RouteTables-Routes Config
+#---------------------------------------------------------------------------------------------
+output "rt_ids" {
+  value       = [for rt in azurerm_route_table.routeTable: rt.id]
+  description = ""
+}
+
+output "rt_subnets" {
+  value       = [for rt in azurerm_route_table.routeTable: rt.subnets]
+  description = ""
+}
+
+
