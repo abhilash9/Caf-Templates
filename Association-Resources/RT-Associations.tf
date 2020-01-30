@@ -1,5 +1,5 @@
 locals {
-  rtAssociation = {for rtAssociation_map in var.rtAssociation_maps: rtAssociation_map.rt_name => rtAssociation_map} 
+  rtAssociation = {for rtAssociation_map in var.rtAssociation_maps: rtAssociation_map.subnet_name => rtAssociation_map} 
 }
 
 data "azurerm_subnet" "subnetData-RT" {
