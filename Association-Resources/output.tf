@@ -1,19 +1,12 @@
 #---------------------------------------------------------------------------------------------
-# Output from the NSG-Associations Config
+# Output from the VNET-Peerings Config
 #---------------------------------------------------------------------------------------------
-/*
-output "nsgAssociation_subnet_ids" {
-  value       = flatten([for subnet in data.azurerm_subnet.subnetData: subnet.id])
+output "virtualNetworkPeering_peer_ids_1" {
+  value       = azurerm_virtual_network_peering.vnet_peer_1.id
   description = ""
 }
 
-output "nsgAssociation_nsg_ids" {
-  value       = flatten([for nsg in data.azurerm_network_security_group.nsgData: nsg.id])
+output "virtualNetworkPeering_peer_ids_2" {
+  value       = azurerm_virtual_network_peering.vnet_peer_2.id
   description = ""
 }
-
-output "test" {
-  value       = zipmap(flatten([for subnet in data.azurerm_subnet.subnetData: subnet.id]),flatten([for nsg in data.azurerm_network_security_group.nsgData: nsg.id]))
-  description = ""
-}
-*/

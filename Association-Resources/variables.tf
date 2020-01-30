@@ -32,3 +32,42 @@ variable "rtAssociation_maps" {
   ]
   description = ""
 }
+
+#---------------------------------------------------------------------------------------------
+# Variables for VNet-Peerings Config
+#---------------------------------------------------------------------------------------------
+variable "peer_names" {
+  type        = list(any)
+  default     = ["peer1","peer2"]
+  description = ""
+}
+
+variable "rg_names" {
+  type        = list(any)
+  default     = ["RG-05","RG-06"]
+  description = ""
+}
+
+variable "vnet_names" {
+  type        = list(any)
+  default     = ["Vnet-05","Vnet-06"]
+  description = ""
+}
+
+variable "allow_virtual_network_access" {
+  type        = string
+  default     = true
+  description = ""
+}
+
+variable "allow_forwarded_traffic" {
+  type        = string
+  default     = true
+  description = ""
+}
+
+variable "use_remote_gateways" {
+  type        = string
+  default     = false
+  description = ""
+}
