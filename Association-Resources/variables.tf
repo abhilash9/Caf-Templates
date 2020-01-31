@@ -15,19 +15,19 @@ variable "rtAssociation_maps" {
 #---------------------------------------------------------------------------------------------
 variable "peer_names" {
   type        = list(any)
-  default     = []
+  default     = ["",""]
   description = ""
 }
 
 variable "rg_names" {
   type        = list(any)
-  default     = []
+  default     = ["",""]
   description = ""
 }
 
 variable "vnet_names" {
   type        = list(any)
-  default     = []
+  default     = ["",""]
   description = ""
 }
 
