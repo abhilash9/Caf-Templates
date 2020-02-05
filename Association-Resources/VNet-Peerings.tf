@@ -21,6 +21,7 @@ data "azurerm_virtual_network" "vnet2" {
 }
 
 resource "azurerm_virtual_network_peering" "vnet_peer_1" {
+  provider                     = azurerm.src
   count                        = length(var.peer_names) == 2 ? 1 : 0
   name                         = var.peer_names[count.index]
   resource_group_name          = element(var.rg_names,count.index)
@@ -32,6 +33,7 @@ resource "azurerm_virtual_network_peering" "vnet_peer_1" {
 }
 
 resource "azurerm_virtual_network_peering" "vnet_peer_2" {
+  provider                     = azurerm.dst
   count                        = length(var.peer_names) == 2 ? 1 : 0
   name                         = var.peer_names[count.index+1]
   resource_group_name          = element(var.rg_names,count.index+1)
