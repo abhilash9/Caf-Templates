@@ -48,3 +48,13 @@ variable "use_remote_gateways" {
   default     = false
   description = ""
 }
+
+
+#---------------------------------------------------------------------------------------------
+# Variables for VNet-Peerings-New Config
+#---------------------------------------------------------------------------------------------
+variable "vnetPeering_maps" {
+  type        = list(any)
+  default     = []
+  description = ""
+}
