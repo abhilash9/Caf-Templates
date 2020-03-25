@@ -1,5 +1,5 @@
 module "Config-Level-03" {
-  source  = ".//modules/Level-03"
+  source  = "github.com/abhilash9/terraform-azurerm-caf//modules/Level-03"
   providers= {
       azurerm = azurerm.crossTenant-mw
       azurerm.src = azurerm.crossTenant-mw
@@ -24,9 +24,13 @@ module "Config-Level-03" {
           rg_name                    = "RG-NET-New-01"
           size                       = "Standard_F2"
           allow_extension_operations = null
-          availability_set_name      = "av-set-01"
+          availability_set           = {
+              name                   = "av-set-01"
+              avset_rg_name          = "RG-NET-New-01"
+          }
           boot_diagnostics           = {
               storage_account_name   = "samwterraformtest01"
+              sa_rg_name             = "RG-NET-New-01"
           }
           license_type               = "None"
           source_image_reference     = [

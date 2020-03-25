@@ -53,8 +53,8 @@ module "Config-Level-02" {
                   vnet_name         = "new-test-vnet"
                   subnet_name       = "default"
                   priIP_allocation  = "Dynamic"
-                  pubIP_address     = "pip-config-01"
-                  pubIP_rg_name     = "RG-NET-New-01"
+                  #pubIP_address     = "pip-config-01"
+                  #pubIP_rg_name     = "RG-NET-New-01"
                   priIP_address     = null
               }
           ]
