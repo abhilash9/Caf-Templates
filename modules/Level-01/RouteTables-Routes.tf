@@ -15,7 +15,7 @@ resource "azurerm_route_table" "routeTable" {
             name = route.value.route
             address_prefix = route.value.route_address_prefix
             next_hop_type = route.value.route_next_hop_type
-            next_hop_in_ip_address = route.value.route_next_hop_type != "VirtualAppliance" ? route.value.route_next_hop_in_ip_address :null
+            next_hop_in_ip_address = route.value.route_next_hop_type == "VirtualAppliance" ? route.value.route_next_hop_in_ip_address :null
         }        
     }
    
